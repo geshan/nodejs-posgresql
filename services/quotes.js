@@ -17,6 +17,21 @@ async function getMultiple(page = 1) {
   }
 }
 
+async function create(quote) {
+  const result = await db.query(
+    'INSERT INTO quote(quote, author) VALUES ($1, $2) RETURNING *',
+    [quote.quote, quote.author]
+  );
+  let message = 'Error in creating quote';
+
+  if (result.length) {
+    message = 'Quote created successfully';
+  }
+
+  return {message};
+}
+
 module.exports = {
-  getMultiple
+  getMultiple,
+  create
 }
