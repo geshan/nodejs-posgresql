@@ -12,4 +12,14 @@ router.get('/', async function(req, res, next) {
   }
 });
 
+/* POST quotes */
+router.post('/', async function(req, res, next) {
+  try {
+    res.json(await quotes.create(req.body));
+  } catch (err) {
+    console.error(`Error while posting quotes `, err.message);
+    next(err);
+  }
+});
+
 module.exports = router;
