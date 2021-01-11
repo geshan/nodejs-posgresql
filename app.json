@@ -1,0 +1,6 @@
+{
+  "name": "Node.js PostgreSQL Demo",
+  "description": "A basic Node.js API using Express and PostgreSQL",
+  "repository": "https://github.com/geshan/nodejs-posgresql",
+  "keywords": ["node", "express", "postgresql"]
+}
