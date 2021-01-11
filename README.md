@@ -1,14 +1,14 @@
 # nodejs-posgresql
 A demo Quotes REST API using Node.js and PostgreSQL. Built with Express Js
 
-## Running on Vercel
+## Deploy with Heroku
 
-At: [https://nodejs-postgresql.vercel.app/quotes](https://nodejs-postgresql.vercel.app/quotes)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/geshan/nodejs-posgresql/tree/master)
 
 ## Deploy with Vercel
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fgeshan%2Fnodejs-posgresql)
 
-## Deploy with Heroku
+### Running on Vercel
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/geshan/nodejs-posgresql/tree/master)
+At: [https://nodejs-postgresql.vercel.app/quotes](https://nodejs-postgresql.vercel.app/quotes)
