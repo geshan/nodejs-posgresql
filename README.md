@@ -1,5 +1,6 @@
 # nodejs-posgresql
-A demo Quotes REST API using Node.js and PostgreSQL. Built with Express Js.
+
+A demo Quotes REST API using Node.js and PostgreSQL. Built with Express Js for this [Node.js PostgreSQL tutorial](https://geshan.com.np/blog/2021/01/nodejs-postgresql-tutorial/).
 
 ## Deploy with Heroku
 
@@ -12,3 +13,7 @@ A demo Quotes REST API using Node.js and PostgreSQL. Built with Express Js.
 ### Running on Vercel
 
 At: [https://nodejs-postgresql.vercel.app/quotes](https://nodejs-postgresql.vercel.app/quotes)
+
+## Running on Zeet
+
+At: [https://geshan-nodejs-posgresql.zeet.app/quotes](https://geshan-nodejs-posgresql.zeet.app/quotes)
