@@ -3,6 +3,7 @@ const helper = require('../helper');
 const config = require('../config');
 
 async function getMultiple(page = 1) {
+  console.log('Getting quotes from the db');
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
     'SELECT id, quote, author FROM quote OFFSET $1 LIMIT $2', 
