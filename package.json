@@ -10,7 +10,8 @@
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "morgan": "~1.9.1",
-    "pg": "^8.5.1"
+    "pg": "^8.5.1",
+    "redis": "^3.1.2"
   },
   "devDependencies": {
     "@architect/sandbox": "^3.3.7"
