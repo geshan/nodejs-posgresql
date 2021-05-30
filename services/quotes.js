@@ -17,12 +17,12 @@ async function getMultiple(page = 1) {
   }
 }
 
-async function search(page = 1, searchTerm) {
+async function getByAuthor(page = 1, author) {
   const offset = helper.getOffset(page, config.listPerPage);
   const query = {
     name: 'search-quotes',
-    text: `SELECT id, quote, author FROM quote WHERE quote ILIKE $1 OFFSET $2 LIMIT $3`,
-    values: [`%${searchTerm}%`, offset, config.listPerPage],
+    text: `SELECT id, quote, author FROM quote WHERE author ILIKE $1 OFFSET $2 LIMIT $3`,
+    values: [`%${author}%`, offset, config.listPerPage],
   }
 
   const rows = await db.query(query);
@@ -88,5 +88,5 @@ async function create(quote){
 module.exports = {
   getMultiple,
   create,
-  search
+  getByAuthor
 }
