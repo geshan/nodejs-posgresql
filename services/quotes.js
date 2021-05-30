@@ -17,6 +17,25 @@ async function getMultiple(page = 1) {
   }
 }
 
+async function search(page = 1, searchTerm) {
+  const offset = helper.getOffset(page, config.listPerPage);
+  const query = {
+    name: 'search-quotes',
+    text: `SELECT id, quote, author FROM quote WHERE quote ILIKE $1 OFFSET $2 LIMIT $3`,
+    values: [`%${searchTerm}%`, offset, config.listPerPage],
+  }
+
+  const rows = await db.query(query);
+  console.log(`res: `, rows);
+  const data = helper.emptyOrRows(rows);
+  const meta = {page};
+
+  return {
+    data,
+    meta
+  }
+}
+
 function validateCreate(quote) {
   let messages = [];
 
@@ -68,5 +87,6 @@ async function create(quote){
 
 module.exports = {
   getMultiple,
-  create
+  create,
+  search
 }
