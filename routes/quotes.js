@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const quotes = require('../services/quotes');
-const cache = require('../services/cache');
 
 /* GET quotes listing. */
 router.get('/', async function(req, res, next) {
@@ -19,6 +18,16 @@ router.get('/', async function(req, res, next) {
     await cache.saveWithTtl(`quotes_${page}`, response, 60);
 
     res.json(response);
+  } catch (err) {
+    console.error(`Error while getting quotes `, err.message);
+    res.status(err.statusCode || 500).json({'message': err.message});
+  }
+});
+
+/* GET quotes listing. */
+router.get('/search', async function(req, res, next) {
+  try {
+    res.json(await quotes.search(req.query.page, req.query.quote));
   } catch (err) {
     console.error(`Error while getting quotes `, err.message);
     res.status(err.statusCode || 500).json({'message': err.message});
