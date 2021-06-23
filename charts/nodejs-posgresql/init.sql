@@ -6,6 +6,9 @@ CREATE TABLE quote (
     updated_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
+INSERT INTO quote (id, quote, author) VALUES
+(18, 'Jenkins X is totally awesome.', 'James Strachan');
+
 INSERT INTO quote (id, quote, author) VALUES 
 (1, 'There are only two kinds of languages: the ones people complain about and the ones nobody uses.', 'Bjarne Stroustrup'), 
 (2, 'Any fool can write code that a computer can understand. Good programmers write code that humans can understand.', 'Martin Fowler'), 
@@ -23,5 +26,5 @@ INSERT INTO quote (id, quote, author) VALUES
 (14, 'There are only two hard things in Computer Science: cache invalidation and naming things.', 'Phil Karlton'), 
 (15, 'Measuring programming progress by lines of code is like measuring aircraft building progress by weight.', 'Bill Gates'), 
 (16, 'Controlling complexity is the essence of computer programming.', 'Brian Kernighan'),
-(17, 'The only way to learn a new programming language is by writing programs in it.', 'Dennis Ritchie'),
-(18, 'Jenkins X is totally awesome.', 'James Strachan');
+(17, 'The only way to learn a new programming language is by writing programs in it.', 'Dennis Ritchie');
+
