@@ -15,9 +15,9 @@ canary:
   progressDeadlineSeconds: 60
 deploymentLabels: {}
 env:
-  DB_HOST: demo-db-postgresql
-  DB_USER: postgres
-  DB_NAME: postgres
+  DB_HOST: myteam-demodb
+  DB_USER: myowner
+  DB_NAME: demodb
 hpa:
   cpuTargetAverageUtilization: 80
   enabled: false
