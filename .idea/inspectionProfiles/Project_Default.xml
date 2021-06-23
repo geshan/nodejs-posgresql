@@ -1,0 +1,8 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="EjbErrorInspection" level="ERROR" enabled="false" />
+    <inspection_tool class="EjbWarningInspection" level="WARNING" enabled="false" />
+    <inspection_tool class="JpaModelErrorInspection" level="ERROR" enabled="false" />
+  </profile>
+</component>

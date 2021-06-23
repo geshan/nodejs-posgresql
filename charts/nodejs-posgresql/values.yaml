@@ -1,0 +1,85 @@
+canary:
+  analysis:
+    interval: 1m
+    maxWeight: 60
+    metrics:
+      latency:
+        interval: 1m
+        threshold: 500
+    stepWeight: 20
+    threshold: 5
+  enabled: false
+  gatewayLabels: {}
+  host: ""
+  labels: {}
+  progressDeadlineSeconds: 60
+deploymentLabels: {}
+env: null
+hpa:
+  cpuTargetAverageUtilization: 80
+  enabled: false
+  labels: {}
+  maxReplicas: 6
+  memoryTargetAverageUtilization: 80
+  minReplicas: 2
+image:
+  pullPolicy: IfNotPresent
+  repository: draft
+  tag: dev
+ingress:
+  annotations: {}
+  classAnnotation: ""
+  labels: {}
+  pathType: ImplementationSpecific
+jx:
+  imagePullSecrets: []
+  releaseCRD: true
+jxRequirements:
+  ingress:
+    annotations: {}
+    apiVersion: networking.k8s.io/v1
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: -jx.
+    serviceType: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+      secretName: ""
+knativeDeploy: false
+livenessProbe:
+  initialDelaySeconds: 60
+  periodSeconds: 10
+  probePath: ""
+  successThreshold: 1
+  timeoutSeconds: 1
+podAnnotations: {}
+podsLabels: {}
+probePath: /
+readinessProbe:
+  failureThreshold: 1
+  periodSeconds: 10
+  probePath: ""
+  successThreshold: 1
+  timeoutSeconds: 1
+replicaCount: 1
+resources:
+  limits:
+    cpu: 400m
+    memory: 256Mi
+  requests:
+    cpu: 200m
+    memory: 128Mi
+service:
+  annotations: {}
+  externalPort: 80
+  internalPort: 8080
+  labels: {}
+  name: nodejs-posgresql
+  type: ClusterIP
+serviceAccount:
+  annotations: {}
+  enabled: true
+  labels: {}
+  name: ""

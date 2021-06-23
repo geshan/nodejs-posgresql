@@ -1,0 +1,11 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+  name: charts
+upstream:
+  type: git
+  git:
+    commit: c75eaa0d11ca9354e9eb2f3dee5a6895030470e5
+    repo: https://github.com/jenkins-x/jx3-pipeline-catalog
+    directory: /helm/charts
+    ref: master
