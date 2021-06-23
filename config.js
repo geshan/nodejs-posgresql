@@ -7,7 +7,13 @@ const config = {
     user: env.DB_USER || 'cklijfef',
     password: env.DB_PASSWORD || 'V1qidES5k3DSJICDRgXtyT8qeu2SPCZp',
     database: env.DB_NAME || 'cklijfef',
-    ssl: true
+    // this object will be passed to the TLSSocket constructor
+    ssl: {
+      rejectUnauthorized: false,
+      //ca: fs.readFileSync('/path/to/server-certificates/root.crt').toString(),
+      //key: fs.readFileSync('/path/to/client-key/postgresql.key').toString(),
+      //cert: fs.readFileSync('/path/to/client-certificates/postgresql.crt').toString(),
+    },
   },
   listPerPage: env.LIST_PER_PAGE || 10,
 };
