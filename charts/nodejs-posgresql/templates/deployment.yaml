@@ -69,7 +69,7 @@ spec:
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
-              key: secretKeyRef
+              key: password
               name: myowner.myteam-demodb.credentials.postgresql.acid.zalan.do
         envFrom:
 {{ toYaml .Values.envFrom | indent 10 }}
