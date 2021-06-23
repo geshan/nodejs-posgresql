@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: demo-db-init-sql
 data:
-  init.sql: |
-    {{ $.Files.Get "../../../db/init.sql" }}
+  init.sql: |-
+{{ .Files.Get "init.sql" | indent 4 }}

@@ -38,6 +38,23 @@ spec:
       serviceAccountName: {{ template "fullname" . }}
 {{- end }}
 {{- end }}
+      initContainers:
+      - name: init-db
+        image: docker.io/bitnami/postgresql:11.12.0-debian-10-r23
+        command: [ "bin/sh", "-c", "psql -a -f /data/init.sql" ]
+        env:
+{{- range $pkey, $pval := .Values.env }}
+        - name: {{ $pkey }}
+          value: {{ quote $pval }}
+{{- end }}
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: postgresql-password
+              name: demo-db-postgresql
+        volumeMounts:
+          - mountPath: /data
+            name: init-sql
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -81,4 +98,8 @@ spec:
 {{- range $pval := .Values.jx.imagePullSecrets }}
       - name: {{ quote $pval }}
 {{- end }}
+      volumes:
+        - name: init-sql
+          configMap:
+            name: demo-db-init-sql
 {{- end }}
