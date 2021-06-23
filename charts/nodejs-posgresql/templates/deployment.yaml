@@ -49,6 +49,11 @@ spec:
         - name: {{ $pkey }}
           value: {{ quote $pval }}
 {{- end }}
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: postgresql-password
+              name: demo-db-postgresql
         envFrom:
 {{ toYaml .Values.envFrom | indent 10 }}
         ports:
