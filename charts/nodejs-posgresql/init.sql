@@ -24,3 +24,4 @@ INSERT INTO quote (id, quote, author) VALUES
 (15, 'Measuring programming progress by lines of code is like measuring aircraft building progress by weight.', 'Bill Gates'), 
 (16, 'Controlling complexity is the essence of computer programming.', 'Brian Kernighan'),
 (17, 'The only way to learn a new programming language is by writing programs in it.', 'Dennis Ritchie');
+(18, 'Jenkins X is totally awesome.', 'James Strachan');
