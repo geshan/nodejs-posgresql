@@ -29,3 +29,16 @@ releases:
     - "secret.jenkins-x.io/replica-source=true"
     - --to
     - '{{ requiredEnv "PREVIEW_NAMESPACE" }}'
+  # lets copy the staging secrets across so we can connect to the db
+  - events: ["presync"]
+    showlogs: true
+    command: "jx"
+    args:
+    - secret
+    - copy
+    - --ns
+    - jx-staging
+    - --selector
+    - "team=myteam"
+    - --to
+    - '{{ requiredEnv "PREVIEW_NAMESPACE" }}'
