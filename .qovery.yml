@@ -1,0 +1,11 @@
+---
+application:
+  name: "quotes-api"
+  project: "quotes-api"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-quotes-api"
+  routes:
+  - application_name: "quotes-api"
+    paths:
+    - "/*"
