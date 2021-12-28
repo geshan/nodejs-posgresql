@@ -1,5 +1,4 @@
 FROM node:14-alpine as base
-RUN apk add bash
 WORKDIR /src
 COPY package*.json ./
 EXPOSE 3000
