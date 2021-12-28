@@ -31,7 +31,8 @@ services:
     links:
       - db
     volumes:
-      - './:/src'
+      - ./:/src
+      - /src/node_modules
 volumes:
   db:
     driver: local
