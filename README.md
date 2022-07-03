@@ -10,10 +10,6 @@ A demo Quotes REST API using Node.js and PostgreSQL. Built with Express Js for t
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fgeshan%2Fnodejs-posgresql)
 
-## Depoly with Zeet
-
-[![Deploy](https://deploy.zeet.co/nodejs-posgresql.svg)](https://deploy.zeet.co/?url=https://github.com/geshan/nodejs-posgresql)
-
 ### Running on Vercel
 
 At: [https://nodejs-postgresql.vercel.app/quotes](https://nodejs-postgresql.vercel.app/quotes)
