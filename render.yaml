@@ -1,0 +1,16 @@
+services:
+  # A Node.js web service
+  - type: web
+    name: nodejs-postgresql
+    env: node
+    repo: https://github.com/geshan/nodejs-posgresql.git
+    region: oregon
+    branch: master
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: ~18.9.0
+      - key: NODE_ENV
+        value: production
