@@ -14,6 +14,10 @@ A demo Quotes REST API using Node.js and PostgreSQL. Built with Express Js for t
 
 [![Deploy to Cyclic](https://deploy.cyclic.app/button.svg)](https://deploy.cyclic.app/)
 
+## Deploy to [Render](https://render.com?utm_source=geshan.com.np)
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+
 ### Running on Vercel
 
 At: [https://nodejs-postgresql.vercel.app/quotes](https://nodejs-postgresql.vercel.app/quotes)
