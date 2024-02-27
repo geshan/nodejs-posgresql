@@ -3,6 +3,11 @@ services:
   db:
     image: postgres:14.1-alpine
     restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
@@ -17,8 +22,10 @@ services:
       context: ./
       target: production
     image: quotes-api
+    restart: always
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     ports:
       - 3000:3000
     environment:
@@ -28,8 +35,6 @@ services:
       DB_USER: postgres
       DB_PASSWORD: postgres
       DB_NAME: postgres
-    links:
-      - db
     volumes:
       - ./:/src
       - /src/node_modules
